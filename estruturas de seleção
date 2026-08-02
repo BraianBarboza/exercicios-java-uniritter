@@ -1,0 +1,285 @@
+import java.util.Scanner;
+
+public class Selec1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n;
+        System.out.println("Digite um numero");
+        n= ler.nextInt();
+        if (n>100){
+            System.out.println("O numero é maior que cem");
+        }
+        else {
+            System.out.println("O numero é menor que cem");
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec2 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero;
+        System.out.println("Digite um numero");
+        numero = ler.nextInt();
+
+        if (numero % 2 == 0){
+            System.out.println("é par");
+
+        }else {
+            System.out.println("é impar");
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec3 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero1, numero2;
+
+        System.out.println("Digite o primeiro numero");
+        numero1 = ler.nextInt();
+
+        System.out.println("Digite o primeiro numero");
+        numero2 = ler.nextInt();
+
+        if (numero1 > numero2) {
+            System.out.println(numero1 + " é o maior dos numeros digiados");
+
+        }
+        else {
+            System.out.println( numero2 + " é o maior numero digitados");
+        }
+
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec4 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero1, numero2;
+
+        System.out.println("Digite o primeiro numero");
+        numero1 = ler.nextInt();
+
+        System.out.println("Digite o primeiro numero");
+        numero2 = ler.nextInt();
+
+        if (numero1 < numero2) {
+            System.out.println(numero1 + " é o menor dos numeros digiados");
+
+        }
+        else {
+            System.out.println( numero2 + " é o menor numero digitados");
+        }
+
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec5 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero;
+        System.out.println("Digite um numero");
+        numero = ler.nextInt();
+
+        if (numero > 100 && numero < 200){
+            System.out.println( numero + " esta dentro do intervalo");
+
+        }else {
+            System.out.println(numero + " não esta no intervalo");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Selec6 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero1, numero2, numero3;
+
+        System.out.println("Digite 3 numeros");
+
+        numero1 = ler.nextInt();
+        numero2 = ler.nextInt();
+        numero3 = ler.nextInt();
+
+        if (numero1 < numero2 + numero3 && numero2 < numero1 + numero3 && numero3 < numero1 + numero2) {
+            System.out.println("Os lados formam um triangulo");
+
+        }
+        else {
+            System.out.println( "Os lados não formam um triangulo");
+        }
+
+    }
+}
+import java.util.Scanner;
+
+public class Selec7 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int vTotais, vBrancos, vValidos, vNulos;
+
+        System.out.println("entre com o numero de eleitores:");
+        vTotais = ler.nextInt();
+
+        System.out.println("entre com o numero de votos brancos:");
+        vBrancos = ler.nextInt();
+
+        System.out.println("entre com o numero de votos validos:");
+        vValidos = ler.nextInt();
+
+        System.out.println("entre com o numero de votos nulos:");
+        vNulos = ler.nextInt();
+
+        int totalB =  vBrancos * 100 /vTotais;
+        int totalV =  vValidos * 100 /vTotais;
+        int totalN =  vNulos * 100 /vTotais;
+
+        System.out.println(totalB + "% de votos brancos \n" + totalN + "% de votos nulos \n"+ totalV + "% de votos validos \n");
+
+    }
+}
+import java.util.Scanner;
+
+public class Selec8 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int a, b, c;
+
+        System.out.println("Digite 3 numeros");
+
+        a = ler.nextInt();
+        b = ler.nextInt();
+        c = ler.nextInt();
+
+        if (a < b + c && b < a + c && c < a + b) {
+            if (a == b && b == c){
+                System.out.println("Os lados formam um triangulo equilátero");
+            }
+            else if (a == b || b == c || c == a) {
+                System.out.println("Os lados formam um triangulo isósceles");
+            }
+            else {
+                System.out.println("Os lados formam um triangulo escaleno");
+            }
+        }
+        else {
+            System.out.println( "Os lados não formam um triangulo");
+        }
+
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec9 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        double  lars,duziaLar;
+        int lar;
+
+        System.out.println("Digite o numero de laranjas a serem compradas:");
+        lar = ler.nextInt();
+        if (lar <= 0 ){
+          System.out.println("Numero inválido");
+
+        }
+        else{
+            if (lar >= 12){
+                duziaLar = lar * 0.25;
+                System.out.printf("---valor da compra--- %n%d unidades de laranja a 0,25 a unidade = %.2f",lar,duziaLar);
+            }
+            else {
+                lars = lar * 0.30;
+                System.out.printf("---valor da compra--- %n%d unidade(s) de laranja a 0,30 a unidade = %.2f",lar,lars);
+            }
+        }
+
+    }
+}
+
+import java.util.Scanner;
+
+public class Selec10 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int menu;
+
+        System.out.printf("------Lista de Produtos e Preços------ %n 1.Banana -> R$ 0.30 preço a granel ou R$ 0.25 preço a duzia ou mais %n 2.Laranja -> R$ 0.40 preço a granel ou R$ 0.35 preço a duzia ou mais %n 3.Maçã -> R$ 0.50 preço a granel ou R$ 0.45 preço a duzia ou mais %n 4.Kiwi -> R$ 0.40 preço a granel ou R$ 0.30 preço a duzia ou mais %n ");
+
+        System.out.println("Escolha o produto desejado ou digite -1 para sair:");
+        menu = ler.nextInt();
+
+        switch (menu) {
+            case 1:
+                System.out.println("Escolha a quantidade de bananas desejada:");
+                int ban = ler.nextInt();
+                if (ban >= 12) {
+                    double duziaBan = ban * 0.25;
+                    System.out.printf("---valor da compra--- %n%d unidades de banana a 0,25 a unidade = %.2f", ban, duziaBan);
+                } else {
+                    double bans = ban * 0.30;
+                    System.out.printf("---valor da compra--- %n%d unidade(s) de banana a 0,30 a unidade = %.2f", ban, bans);
+                }
+                break;
+            case 2:
+                System.out.println("Escolha a quantidade de laranjas desejada:");
+                int lar = ler.nextInt();
+                if (lar >= 12) {
+                    double duziaLar = lar * 0.35;
+                    System.out.printf("---valor da compra--- %n%d unidades de laranja a 0,35 a unidade = %.2f", lar, duziaLar);
+                } else {
+                    double lars = lar * 0.40;
+                    System.out.printf("---valor da compra--- %n%d unidade(s) de laranja a 0,40 a unidade = %.2f", lar, lars);
+                }
+                break;
+            case 3:
+                System.out.println("Escolha a quantidade de maçãs desejada:");
+                int mac = ler.nextInt();
+                if (mac >= 12) {
+                    double duziaMac = mac * 0.45;
+                    System.out.printf("---valor da compra--- %n%d unidades de maçã a 0,45 a unidade = %.2f", mac, duziaMac);
+                } else {
+                    double macs = mac * 0.50;
+                    System.out.printf("---valor da compra--- %n%d unidade(s) de maçã a 0,50 a unidade = %.2f", mac, macs);
+                }
+                break;
+            case 4:
+                System.out.println("Escolha a quantidade de kiwis desejada:");
+                int kiw = ler.nextInt();
+                if (kiw >= 12) {
+                    double duziaKiw = kiw * 0.30;
+                    System.out.printf("---valor da compra--- %n%d unidades de kiwi a 0,30 a unidade = %.2f", kiw, duziaKiw);
+                } else {
+                    double kiws = kiw * 0.40;
+                    System.out.printf("---valor da compra--- %n%d unidade(s) de kiwi a 0,40 a unidade = %.2f", kiw, kiws);
+                }
+                break;
+            case -1:
+                System.out.println("Operação finalizada");
+                break;
+        }
+
+    }
+}
