@@ -1,0 +1,194 @@
+package Desafio;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int [][] m = null;
+
+        m = Metodos.criarMatriz(5,5);
+
+        while (true){
+            System.out.println("""
+                    Escolha uma opção:\s
+                     1) Soma dos elementos das linhas pares
+                     2) Soma dos elementos das colunas impares
+                     3) Soma dos elementos da diagonal primária
+                     4) Media de todos os elementos da matriz
+                     5) Quantidade de elementos negativos
+                     6) Multiplicação da diagonal primária pela media da diagonal secundária
+                    """);
+            int escolha = ler.nextInt();
+
+            switch (escolha){
+                case 1:
+                    Metodos.printMatriz(m);
+                    Metodos.somaLinhas(m);
+                    break;
+                case 2:
+                    Metodos.printMatriz(m);
+                    Metodos.somaColuna(m);
+                    break;
+                case 3:
+                    Metodos.printMatriz(m);
+                    Metodos.somaDiagonal(m);
+                    break;
+                case 4:
+                    Metodos.printMatriz(m);
+                    Metodos.mediaTotal(m);
+                    break;
+                case 5:
+                    Metodos.printMatriz(m);
+                    Metodos.qdeNegativos(m);
+                    break;
+                case 6:
+                    Metodos.printMatriz(m);
+                    Metodos.multDiagonais(m);
+                    break;
+                case -1: System.out.println("Encerrando");
+                return;
+                default:System.out.println("Numero digitado inválido");
+                break;
+            }
+        }
+    }
+}
+
+package Desafio;
+
+import java.util.Random;
+public class Metodos {
+
+    public static int[][] criarMatriz(int numLinhas, int numColunas) {
+        Random random = new Random();
+        int[][] m = new int[numLinhas][numColunas];
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = random.nextInt(-9, 10);
+            }
+        }
+        printMatriz(m);
+        return m;
+    }
+
+    public static void printMatriz(int[][] m) {
+        for (int[] ints : m) {
+            for (int anInt : ints) {
+                if (anInt < 0) {
+                    System.out.printf("%d| ", anInt);
+                } else {
+                    System.out.printf("%d | ", anInt);
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+    public static void somaLinhas(int[][] m) {
+        int soma = 0;
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i % 2 == 1) {
+                    soma += m[i][j];
+                }
+            }
+            if (i % 2 == 1) {
+                System.out.println("Linha " + (i + 1) + ":" + soma);
+                soma = 0;
+            }
+        }
+    }
+
+    public static void somaDiagonal(int[][] m) {
+        int somaD = 0;
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i == j) {
+                    somaD += m[i][j];
+                }
+            }
+        }
+        System.out.printf("\nSoma da diagonal principal: %d\n", somaD);
+    }
+
+    public static void qdeNegativos(int[][] m) {
+        int qdeN = 0;
+        for (int[] ints : m) {
+            for (int anInt : ints) {
+                if (anInt < 0) {
+                    qdeN++;
+                }
+            }
+        }
+        System.out.printf("\nQuantidade total de numeros negativos: %d\n", qdeN);
+    }
+
+    public static void multDiagonais(int[][] m) {
+        double diagonal2 = 0;
+        double mediaD2;
+        System.out.println("Diagonal principal: ");
+        for (int i = 0; i < m.length; i++) {
+            System.out.print(m[i][i] + " | ");
+        }
+        System.out.println("\nDiagonal secundaria:");
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i + j == m.length - 1) {
+                    System.out.print(m[i][j] + " | ");
+                    diagonal2 += m[i][j];
+                }
+            }
+        }
+        mediaD2 = diagonal2 / 5;
+        System.out.printf("\nMedia da diagonal secundária: %.2f", mediaD2);
+        System.out.println("\nMultiplicação da diagonal primária pela media da diagonal secundaria:\n");
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i == j) {
+                    float mult = (float) (m[i][j] * mediaD2);
+                    System.out.printf(" %.2f | ", mult);
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public static void somaColuna(int[][] m) {
+        int soma=0;
+        int coluna=0;
+        int count = 0;
+        while (coluna <= 2) {
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                    if (j % 2 == 0) {
+                        soma += m[i][count];
+                        break;
+                    }
+                }
+            }
+            System.out.println("Soma da Coluna " + (count + 1)+ ": " + soma );
+            soma=0;
+            count++;
+            count++;
+            coluna++;
+        }
+        System.out.println();
+    }
+
+    public static void mediaTotal(int[][] m) {
+        int elementos = 0;
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i + j == m.length - 1) {
+                    elementos += m[i][j];
+                }
+            }
+        }
+        float media = (float) elementos/25;
+        System.out.printf("Media de todos os elementos: %.2f\n", media);
+    }
+}
+
+
