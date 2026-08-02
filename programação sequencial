@@ -1,0 +1,222 @@
+import java.util.Scanner;
+
+public class ProgSeq1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n1,n2;
+
+
+        System.out.println("Digite o primeiro numero");
+        n1 = ler.nextInt();
+
+        System.out.println("Digite o segundo numero");
+        n2 = ler.nextInt();
+
+        int mult = (n1 * n2);
+
+        System.out.println("O resultado é: " + mult);
+    }
+}
+
+import java.util.Scanner;
+
+public class ProgSeq2 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n1,n2,n3;
+
+        System.out.println("Digite o primeiro numero");
+        n1 = ler.nextInt();
+
+        System.out.println("Digite o segundo numero");
+        n2 = ler.nextInt();
+
+        System.out.println("Digite o terceiro numero");
+        n3 = ler.nextInt();
+
+        int soma = (n1 + n2 + n3);
+
+        System.out.println("O resultado é: " + soma);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class ProgSeq3 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n1, n2, n3, n4;
+
+        System.out.println("Digite o primeiro numero");
+        n1 = ler.nextInt();
+
+        System.out.println("Digite o segundo numero");
+        n2 = ler.nextInt();
+
+        System.out.println("Digite o terceiro numero");
+        n3 = ler.nextInt();
+
+        System.out.println("Digite o quarto numero");
+        n4 = ler.nextInt();
+
+        float media= (n1 + n2 + n3 + n4) /4;
+
+        System.out.printf("O resultado é: %.2f " , media);
+    }
+}
+
+import java.util.Scanner;
+
+public class ProgSeq3_1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        float n1, n2, n3, n4;
+
+        System.out.println("Digite o primeiro numero");
+        n1 = ler.nextFloat();
+
+        System.out.println("Digite o segundo numero");
+        n2 = ler.nextFloat();
+
+        System.out.println("Digite o terceiro numero");
+        n3 = ler.nextFloat();
+
+        System.out.println("Digite o quarto numero");
+        n4 = ler.nextFloat();
+
+        float media= (n1 + n2 + n3 + n4) /4;
+
+        System.out.printf("O resultado é: %.2f " , media);
+    }
+}
+
+import java.util.Scanner;
+
+public class ProgSeq4 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        float x;
+
+        System.out.println("Digite o X");
+        x = ler.nextFloat();
+
+        System.out.println("Numero: " + x);
+
+        float quad = ( x * x );
+        System.out.println("O Quadrado de X é: " + quad );
+
+        float resto = ( x % 3 );
+        System.out.println("O Resto da divisão de X por 3 é: " + resto);
+
+        float metade = ( x/2 );
+        System.out.printf("A metade de X é: %.2f\n" , metade );
+
+        float multDiv = ( quad/2 );
+        System.out.printf("A metade do produto de X é: %.2f" , multDiv );
+
+    }
+}
+
+
+import java.util.Scanner;
+
+public class ProgSeq5 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        float x;
+
+        System.out.println("Digite um numero");
+        x = ler.nextFloat();
+
+        float raio = (float) (3.141592 * ( x * x ));
+        System.out.printf("Raio de X é : %.2f" , raio);
+
+    }
+}
+
+
+import java.util.Scanner;
+
+public class ProgSeq6 {
+    public static void main(String[] args) {
+        Scanner ler= new Scanner(System.in);
+
+        float c;
+
+        System.out.println("Digite uma temperatura em Fahrenheit");
+        c= ler.nextFloat();
+
+        float celsius =(c - 32) *  5 / 9;
+        System.out.printf("Numero em graus celsius = %.1f", celsius);
+    }
+}
+
+import java.util.Scanner;
+
+public class ProgSeq7 {
+    public static void main(String[] args) {
+        Scanner ler= new Scanner(System.in);
+
+        float p;
+
+        System.out.println("Digite um numero em polegadas");
+        p= ler.nextFloat();
+
+        float celsius = (float) (p * 25.4);
+        System.out.printf("Numero em milimetros = %.1f", celsius);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class ProgSeq8 {
+    public static void main(String[] args) {
+        Scanner ler= new Scanner(System.in);
+
+        int h, min, seg;
+
+        System.out.println("Digite as horas");
+        h= ler.nextInt();
+
+        System.out.println("Digite os minutos");
+        min= ler.nextInt();
+
+        System.out.println("Digite os segundos");
+        seg= ler.nextInt();
+
+        int segtotal= (h*60*60) + (min * 60) + seg;
+        System.out.println("Total de segundos: " + segtotal);
+    }
+}
+
+import java.util.Scanner;
+
+public class ProgSeq9 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int h,m,c;
+
+        System.out.println("Quantos homens");
+        h = ler.nextInt();
+
+        System.out.println("Quantas mulheres");
+        m = ler.nextInt();
+
+        System.out.println("Quantas crianças");
+        c = ler.nextInt();
+
+int total = ( h * 650)+( m * 420) + ( c * 290);
+
+        System.out.println("Quantidade de carne necessária: " + total + " g ");
+    }
+}
+
