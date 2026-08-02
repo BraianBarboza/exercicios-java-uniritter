@@ -1,0 +1,354 @@
+import java.util.Scanner;
+
+public class Vetores1 {
+    public static void main(String[] args) {
+
+        int[] x = new int[10];
+
+        for (int i = 0; i < x.length; i++) {
+            x[i] = 30;
+            System.out.println(x[i]);
+        }
+    }
+}
+public class Vetores2 {
+    public static void main(String[] args) {
+        int[] x = new int[10];
+
+        for ( int i = 0 ; i < x.length ; i++){
+            x[i]= ( i * 10) + 10;
+            System.out.println(x[i]);
+        }
+    }
+}
+
+public class Vetores3 {
+    public static void main(String[] args) {
+        int[] x = new int[10];
+
+        for (int i = 0 ; i < x.length ; i++ ){
+            if (i % 2 == 0){
+                x[i] = 10;
+                System.out.println(x[i]);
+            }
+            else {
+                x[i] = 20;
+                System.out.println(x[i]);
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Vetores4 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int[] b = new int[20];
+        int par = 0;
+
+        System.out.println("Digite os valores de 20 posições");
+
+        for (int i = 0; i < b.length; i++) {
+            b[i] = ler.nextInt();
+            if (b[i] % 2 == 0) {
+                par++;
+            }
+        }System.out.println("Quantidade de valores par: " + par);
+    }
+}
+
+import java.util.Scanner;
+
+public class Vetores5 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int[] a = new int[10];
+        int[] b = new int[10];
+        int[] c = new int[10];
+        int contador = 0;
+
+        System.out.println("Digite 10 numeros para primeira coluna");
+
+        for (int i = 0; i < a.length; i++) {
+            a[i] = ler.nextInt();
+        }
+        System.out.println("Digite 10 numeros para segunda coluna");
+
+        for (int i = 0; i < b.length; i++) {
+            b[i] = ler.nextInt();
+        }
+        System.out.println("Vetores resultantes");
+        for (int i = 0; i < c.length; i++) {
+            System.out.printf("%6d", c[i] = a[i] * b[i]);
+            contador++;
+
+            if (contador % 5 == 0) {
+                System.out.println();
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Vetores6 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int[] x = new int[30];
+
+        System.out.println("Digite 30 numeros inteiros");
+            for (int i = 0 ; i < x.length ; i++){
+                x[i] = ler.nextInt();
+                if (x[i] > -1) {
+                    System.out.println("Posição " + (i + 1) + "| Valor: " + x[i]);
+                }
+            }
+        }
+    }
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Vetores7 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int[] x = new int[10];
+        int[] y = new int[10];
+
+        System.out.println("Digite 10 valores");
+
+        for (int i = 0 ; i < x.length ; i++){
+            x[i]= ler.nextInt();
+            if (x[i] % 2 == 0 ){
+                y[i] = (x[i] * 2);
+                System.out.println("Y: " + y[i]);
+            }
+            else {
+                y[i] = (x[i] * 3);
+                System.out.println("Y: " + y[i]);
+            }
+        }
+        System.out.println("Y: " + Arrays.toString(y));
+    }
+}
+
+import java.util.Scanner;
+
+public class Vetores8 {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+
+        int[] m = new int[10];
+        int[] troca = new int[10];
+
+        System.out.println("Digite 10 valores: ");
+        for (int i = 0; i < m.length; i++) {
+            m[i] = ler.nextInt();
+        }
+
+        System.out.println("Vetor final: ");
+        for (int i = 0; i < 5; i++) {
+            troca[i] = m[i + 5];
+            System.out.println(troca[i]);
+        }
+        for (int i = 0; i < 5; i++) {
+            troca[i + 5] = m[i];
+            System.out.println(troca[i+5]);
+        }
+
+    }
+    }
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Vetores9 {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+
+        int[] a = new int [10];
+        int[] b = new int[10];
+        int tamanhoC = a.length + b.length;
+        int[] c = new int[tamanhoC];
+        int i = 0;
+
+        System.out.println("Digite 10 numeros para primeira coluna");
+
+        for (int j = 0; j < a.length; j++) {
+            a[j] = ler.nextInt();
+        }
+        System.out.println("Digite 10 numeros para segunda coluna");
+
+        for (int j = 0; j < b.length; j++) {
+            b[j] = ler.nextInt();
+        }
+
+        for (int object : a) {
+            c[i] = object;
+            i++;
+        }
+        for (int object : b) {
+            c[i] = object;
+            i++;
+        }
+        System.out.println("Vetor A: " + Arrays.toString(a));
+        System.out.println("Vetor B: " + Arrays.toString(b));
+        System.out.println("Vetor C: " + Arrays.toString(c));
+    }
+}
+
+import java.util.Scanner;
+
+public class Vetores10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] pares = new int[10];
+        int[] impares = new int[10];
+        int qdePar = 0, qdeImpar=0;
+
+
+        System.out.println("Digite os valores \n(digite 0 para sair)");
+
+        while (true) {
+            int numero = scanner.nextInt();
+
+            if (numero == 0 || qdePar == 10 || qdeImpar == 10) {
+                break;
+            }
+
+            if (numero % 2 == 0) {
+                pares[qdePar++] = numero;
+            } else {
+                impares[qdeImpar++] = numero;
+            }
+        }
+
+        System.out.println("\nVetor de pares:");
+        for (int i = 0; i < qdePar; i++) {
+            System.out.print(pares[i] + " ");
+        }
+
+        System.out.println("\nVetor de ímpares:");
+        for (int i = 0; i <qdeImpar; i++) {
+            System.out.print(impares[i] + " ");
+        }
+    }
+}
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Vetores11 {
+    public static void main(String[] args) {
+
+    Scanner ler = new Scanner(System.in);
+
+    int[] lista = new int[20];
+
+    System.out.println("Digite 20 numeros");
+
+           for (int i = 0; i < lista.length; i++) {
+        lista[i] = ler.nextInt();
+    }
+           Arrays.sort(lista);
+
+          System.out.print("Ordem crescente:    ");
+       	  for (int i = 0; i < lista.length; i++) {
+        System.out.print(lista[i]+ "  ");
+    }
+
+    }
+}
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Vetores12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] vetor = new int[6];
+        int soma=0, produto=1, somaMedia=0;
+
+        System.out.println("Digite 6 numeros");
+        for (int i = 0; i < 6; i++) {
+            System.out.print("Elemento " + (i + 1) + ": ");
+            vetor[i] = scanner.nextInt();
+        }
+
+        System.out.print("\nEscolha a opção desejada:\n 1- Soma dos elementos\n 2- Produto dos elementos \n 3- Média dos elementos \n 4- Mostre o vetor");
+        int opcao = scanner.nextInt();
+
+        switch (opcao) {
+            case 1:
+
+                for (int num : vetor) {
+                    soma += num;
+                }
+                System.out.println("Soma dos elementos: " + soma);
+                break;
+            case 2:
+                for (int num : vetor) {
+                    produto *= num;
+                }
+                System.out.println("Produto dos elementos: " + produto);
+                break;
+            case 3:
+                for (int num : vetor) {
+                    somaMedia += num;
+                }
+                double media = (double) somaMedia / vetor.length;
+                System.out.println("Média dos elementos: " + media);
+                break;
+            case 4:
+                System.out.println("Vetor:");
+                    System.out.print(Arrays.toString(vetor));
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
+    }
+}
+import java.util.Scanner;
+
+public class Vetores13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] a = new int[30];
+        int[] b = new int[30];
+        int[] c = new int[30];
+
+        System.out.println("Digite os 30 valores do vetor A:");
+        for (int i = 0; i < 30; i++) {
+            a[i] = scanner.nextInt();
+        }
+
+        System.out.println("Digite os 30 valores do vetor B:");
+        for (int i = 0; i < 30; i++) {
+            b[i] = scanner.nextInt();
+        }
+
+        int indiceC = 0;
+
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 30; j++) {
+                if (a[i] == b[j]) {
+                    c[indiceC++] = a[i];
+                    break;
+                }
+            }
+        }
+
+        System.out.println("\nInterseção de A e B:");
+        for (int i = 0; i < indiceC; i++) {
+            System.out.println("Elemento " + (i + 1) + ": " + c[i]);
+        }
+    }
+}
