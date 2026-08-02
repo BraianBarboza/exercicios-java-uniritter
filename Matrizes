@@ -1,0 +1,303 @@
+public class Matriz1 {
+    public static void main(String[] args) {
+
+        int[][] numeros = new int[7][9];
+        int somaNumeros = 0;
+
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros[i].length; j++) {
+                numeros[i][j] = (int)(Math.random() * 10 + 1);
+                somaNumeros +=numeros[i][j];
+                System.out.print(numeros[i][j] + " | ");
+            }
+            System.out.println();
+        }
+        System.out.printf("Soma de todos os elementos %d", somaNumeros);
+    }
+}
+
+import java.util.Random;
+
+public class Matriz2 {
+    public static void main(String[] args) {
+
+        int[][] numeros= new int[6][8];
+        int[] vC = new int[6];
+        Random random = new Random();
+
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros[i].length; j++) {
+                numeros[i][j] = random.nextInt(-20,20);
+                System.out.print(numeros[i][j] + " | ");
+                if (numeros[i][j] < 0){
+                    vC[i]++;
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("Numero de negativos:");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print(vC[i] + " | ");
+        }
+    }
+}
+
+import java.util.Random;
+
+public class Matriz3 {
+    public static void main(String[] args) {
+        int[][] m = new int[5][5];
+        Random random = new Random();
+
+        int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0;
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = (random.nextInt(1,10));
+
+                System.out.print(m[i][j] + " | ");
+                if (j == 0){
+                    c1 += m[i][j];
+                }
+                if (j == 1){
+                    c2 += m[i][j];
+                }
+                if (j == 2){
+                    c3 += m[i][j];
+                }
+                if (j == 3){
+                    c4 += m[i][j];
+                }
+                if (j == 4){
+                    c5 += m[i][j];
+                }
+            }
+            System.out.println();
+        }
+        System.out.printf("\nColuna 1: %d\nColuna 2: %d\nColuna 3: %d\nColuna 4: %d\nColuna 5: %d\n", c1, c2, c3, c4, c5);
+
+        }
+    }
+
+
+import java.util.Random;
+
+public class Matriz4 {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        int[][] m = new int[10][10];
+        int soma = 0;
+
+        for (int i = 0; i <m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = random.nextInt(1, 10);
+                System.out.printf("%d | ", m[i][j]);
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                if (i % 2 != 0) {
+                    soma += m[i][j];
+                }
+            }
+            if (i % 2 != 0) {
+                System.out.println("Linha" + (i+1) + " | " + soma);
+                soma = 0;
+            }
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Matriz5 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int[][] a = new int[5][5];
+        int[][] b = new int[5][5];
+        int[][] c = new int[5][5];
+
+        System.out.println("Digite os numeros da primeira matriz");
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                a[i][j] = ler.nextInt();
+            }
+            System.out.println();
+        }
+        System.out.println("Digite os numeros da segunda matriz");
+
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                b[i][j] = ler.nextInt();
+            }
+            System.out.println();
+        }
+
+        System.out.println("Vetor S (A + B): ");
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < c[i].length; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+                System.out.printf(" %d | ", c[i][j]);
+            }
+        System.out.println();
+    }
+    }
+}
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Matriz6 {
+    public static void main(String[] args) {
+
+        Scanner ler = new Scanner(System.in);
+        Random random = new Random();
+
+        int[][] m = new int[6][6];
+        int[] a = new int[36];
+        int valor;
+        int mult;
+
+        System.out.println("Matriz M:");
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = (random.nextInt(1,100));
+
+                System.out.printf("%d | " , m[i][j]);
+            }
+                System.out.println();
+        }
+
+        System.out.println("Digite o valor desejado ");
+        valor = ler.nextInt();
+
+        System.out.println("Vetor A:");
+        for (int[] ints : m) {
+            for (int j = 0; j < ints.length; j++) {
+                mult = ints[j] * valor;
+                a[j] = mult;
+
+                System.out.printf("%d | ", a[j]);
+            }
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class Matriz7 {
+    public static void main(String[] args) {
+
+            Scanner ler = new Scanner(System.in);
+            int[][] m = new int[5][5];
+            int somaL = 0, somaC = 0, somaD = 0, somaT = 0;
+
+            System.out.println("Digite os valores da matriz: ");
+
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                    m[i][j] = ler.nextInt();
+                    somaT += m[i][j];
+                    if (i == 3){
+                        somaL += m[i][j];
+                    }
+                    if (j == 1){
+                        somaC += m[i][j];
+                    }
+                    if (i == j){
+                        somaD += m[i][j];
+                    }
+                }
+            }
+            System.out.println("Matriz: ");
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.printf("%d | ", m[i][j]);
+            }
+            System.out.println();
+        }
+            System.out.println();
+            System.out.printf("Soma da linha 4: %d\nSoma da coluna 2: %d\nSoma da diagonal principal: %d\n Soma total da matriz: %d\n" ,somaL, somaC, somaD, somaT);
+
+        }
+    }
+
+
+
+import java.util.Random;
+
+public class Matriz8 {
+    public static void main(String[] args) {
+        int[][] m = new int[10][10];
+        int soma = 0;
+        float media;
+        Random random = new Random();
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                m[i][j] = (random.nextInt(1,10));
+                System.out.printf("%d | ", m[i][j]);
+                if (i == j) {
+                    soma += m[i][j];
+                }
+            }
+            System.out.println();
+            }
+        media = (float) soma /10;
+        System.out.printf("Media da diagonal principal: %.2f" , media);
+        }
+    }
+
+
+import java.util.Scanner;
+
+public class Matriz9 {
+
+        public static void main(String[] args) {
+            Scanner ler = new Scanner(System.in);
+            int[][] m = new int[3][3];
+            double somaD = 0;
+            System.out.println("Digite os valores da matriz M: ");
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                    m[i][j] = ler.nextInt();
+                }
+            }
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                   System.out.printf("%d | ",m[i][j]);
+                }
+                System.out.println();
+            }
+            System.out.println("Diagonal principal: ");
+            for (int i = 0; i < m.length; i++) {
+                System.out.print(m[i][i] + " | ");
+            }
+            System.out.println("\nDiagonal secundária: ");
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                    if (i + j == m.length - 1) {
+                        System.out.print(m[i][j] + " | ");
+                        somaD += m[i][j];
+                    }
+                }
+            }
+            double mediaDS = somaD / 3;
+            System.out.printf("\nMédia da diagonal secundária: %.2f\n", mediaDS);
+            System.out.println("Multiplicação dos valores: ");
+            for (int i = 0; i < m.length; i++) {
+                for (int j = 0; j < m[i].length; j++) {
+                    if (i == j) {
+                        System.out.print(m[i][j] * mediaDS + " | ");
+                    }
+                }
+            }
+        }
+    }
+
