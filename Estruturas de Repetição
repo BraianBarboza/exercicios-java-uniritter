@@ -1,0 +1,216 @@
+import java.util.Scanner;
+public class EstRpt1 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        int somaP = 0, somaIm = 0, p = 0, im = 0, n;
+
+        System.out.println("Digite um valor inteiro e positivo: ");
+        n = ler.nextInt();
+
+        if (n > 0) {
+            for (int i = 1; i <= n; i++) {
+                if (i % 2 == 0) {
+                    p++;
+                    somaP += i;
+                } else {
+                    im++;
+                    somaIm += i;
+                }
+            }
+            System.out.printf("Quantidade de números pares entre 1 e %d: %d%n", n, p);
+            System.out.println("Soma dos números pares: " + somaP);
+            System.out.printf("Quantidade de números impares entre 1 e %d: %d%n", n, im);
+            System.out.println("Soma dos números impares: " + somaIm);
+        } else {
+            System.out.println("Numero inválido");
+        }
+    }
+}
+
+import java.util.Scanner;
+
+public class EstRpt2 {
+    public static void main(String[] args) {
+        Scanner ler= new Scanner(System.in);
+
+        int nA,nB;
+        int soma=0;
+
+    System.out.println("Digite dois numeros inteiros positivos garantindo que A seja menor que B");
+    System.out.println("Digite o valor de A: ");
+    nA = ler.nextInt();
+    System.out.println("Digite o valor de B: ");
+    nB = ler.nextInt();
+
+    if( nA < nB) {
+        System.out.printf("Numeros divisiveis por 5 entre %d e %d%n" , nA , nB);
+        for (int i = nA; i <= nB; i++) {
+            if (i % 5 == 0) {
+                System.out.println(i);
+                soma += i;
+            }
+        }
+        System.out.println("A soma dos numeros é: " + soma);
+    }
+    else {
+        System.out.println("os requisitos não foram cumpridos");
+        }
+       }
+      }
+
+
+import java.util.Scanner;
+
+public class EstRpt3 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int n, soma = 0;
+
+        System.out.println("Digite um valor inteiro e positivo: ");
+        n = ler.nextInt();
+
+        if (n > 0) {
+            for (int i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    soma += i;
+                }
+            }
+            if (n == soma) {
+                System.out.printf("%d é um número perfeito", n);
+            }
+            else {
+                System.out.printf("%d não é um número perfeito", n);
+            }
+        }
+        else {
+            System.out.println("Numero inválido");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class EstRpt4 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int nA , nB ;
+
+        do {
+            System.out.println("Digite dois numeros");
+            nA = ler.nextInt();
+            nB = ler.nextInt();
+            if (nA < nB){
+                System.out.println("Digiteado em ordem crescente\n");
+            }
+            else if (nA == nB){
+                System.out.println("Numeros iguais, encerrando..\n");
+            }
+            else {
+                System.out.println("Digitado em ordem decrescente\n");
+            }
+        }
+        while (nA != nB);
+    }
+}
+import java.util.Scanner;
+
+public class EstRpt6 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero;
+        do {
+            System.out.println("Digite um numero");
+            numero = ler.nextInt();
+            for (int i = 1 ; i < 11 ; i++ ){
+                int tabuada = (numero * i);
+                System.out.printf( numero + " * " + i + " = " + tabuada +"\n");
+            }
+        }while (numero > -1 );
+    }
+}
+
+public class EstRpt8 {
+    public static void main(String[] args) {
+            int contador = 0 ;
+            int n = 0;
+
+            System.out.println(  " 50 primeiros numeros primos após o 100:\n");
+
+            while(contador < 50){
+                boolean primo = true;
+
+                for(int i = 2; i <= (n / 2); i++){
+                    if(n % i == 0){
+                        primo = false;
+                        break;
+                    }
+                }
+
+                if((primo) && (n > 100)){
+                    System.out.printf("%6d", n);
+                    contador++;
+
+                    if(contador % 10 == 0){
+                        System.out.println();
+                    }
+                }
+                n++;
+            }
+        }
+    }
+
+import java.util.Scanner;
+
+public class EstRpt10 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+        int numero;
+        do {
+            System.out.println("Digite um numero");
+            numero = ler.nextInt();
+            for (int i = 1 ; i < numero+1 ; i++ ){
+                int mult = (numero * i);
+                System.out.printf( numero + " * " + i + " = " + mult +"\n");
+            }
+        }while (numero > 0 );
+    }
+}
+
+
+import java.util.Scanner;
+
+public class EstRpt11 {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+
+
+        float mediaIdadeM=0, mediaIdadeF=0;
+        int idadeM=0, idadeF=0;
+        String sexo;
+        int idade;
+        int qdeM=0, qdeF=0;
+
+        do {
+            System.out.println("Digite idade e sexo");
+            idade = ler.nextInt();
+            sexo = ler.next();
+             if (sexo.equals("m")){
+                 qdeM++;
+                mediaIdadeM = ((float) (idadeM += idade) /qdeM);
+
+             } else if (sexo.equals("f")) {
+                 qdeF++;
+                 mediaIdadeF = ((float) (idadeF += idade) /qdeF);
+             }
+
+        }while (sexo.equals("m") || sexo.equals("f"));
+
+        System.out.printf("Media da idade dos homens %.2f%n" , mediaIdadeM);
+        System.out.printf("Media da idade das mulheres %.2f%n" , mediaIdadeF);
+    }
+}
